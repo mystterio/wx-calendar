@@ -18,6 +18,8 @@ var touchMove = function(e, ins) {
     var state = ins.getState()
     if (state.calendarMoving) return false
     state.calendarMoving = true
+    //console.log('touchMove e',JSON.stringify(e));
+    console.log('state',111,JSON.stringify(ins));
     var diff = Math.floor((e.changedTouches[0].pageY - state.calendarPageY) * 10) / 10
     if ((state.calendarCurrHeight + diff) >= state.calendarMin && (state.calendarCurrHeight + diff) <= state.calendarMax) {
         //calendar移动距离
@@ -69,6 +71,7 @@ var touchMove = function(e, ins) {
 
 var touchEnd = function(e, ins) {
     var state = ins.getState()
+    console.log('state',state,'ins',ins);
     var _pageY = e.changedTouches[0].pageY
     var diff = Math.floor((_pageY - state.calendarPageY))
     var position = state.calendarCurrHeight + diff

@@ -94,10 +94,28 @@
                                         style="color: {{ d.marker.corner[0].color ? d.marker.corner[0].color : '#2a97ff' }};">{{ d.marker.holiday[0].mark }}</text>
                                     <text wx:else>{{ d.lunar_day }}</text>
                                     <view class="wd-calendar-schedules" wx:if="{{ d.marker && d.marker.schedule.length > 0 }}">
+                                        <!-- 日程1 -->
                                         <view 
                                             class="wd-calendar-schedule"
-                                            style="{{ d.marker.schedule[0].color ? 'color:' + d.marker.schedule[0].color + ';' : '' }}{{ d.marker.schedule[0].bgColor ? 'background-color:' + d.marker.schedule[0].bgColor + ';' : '' }}">{{ d.marker.schedule[0].mark }}</view>
-                                        <view class="wd-calendar-schedule-more" wx:if="{{ d.marker.schedule.length - 1 > 0 }}">+{{ d.marker.schedule.length - 1 }}</view>
+                                            style="{{ d.marker.schedule[0].color ? 'color:' + d.marker.schedule[0].color + ';' : '' }}{{ d.marker.schedule[0].bgColor ? 'background-color:' + d.marker.schedule[0].bgColor + ';' : '' }}">{{ d.marker.schedule[0].mark }}
+                                        </view>
+                                        <!-- 日程2 -->
+                                        <view wx:if="{{ d.marker && d.marker.schedule.length > 1 }}">
+                                            <view 
+                                                class="wd-calendar-schedule"
+                                                style="{{ d.marker.schedule[0].color ? 'color:' + d.marker.schedule[0].color + ';' : '' }}{{ d.marker.schedule[0].bgColor ? 'background-color:' + d.marker.schedule[0].bgColor + ';' : '' }}">{{ d.marker.schedule[1].mark }}
+                                            </view>
+                                        </view>
+                                        <!-- 日程3 -->
+                                        <view wx:if="{{ d.marker && d.marker.schedule.length > 2 }}">
+                                            <view 
+                                                class="wd-calendar-schedule"
+                                                style="{{ d.marker.schedule[0].color ? 'color:' + d.marker.schedule[0].color + ';' : '' }}{{ d.marker.schedule[0].bgColor ? 'background-color:' + d.marker.schedule[0].bgColor + ';' : '' }}">{{ d.marker.schedule[2].mark }}
+                                            </view>
+                                        </view>
+                                        <!--剩余日程  -->
+                                        <view class="wd-calendar-schedule-more" wx:if="{{ d.marker.schedule.length - 3 > 0 }}">+{{ d.marker.schedule.length - 3 }}
+                                        </view>
                                     </view>
                                 </view>
                             </view>

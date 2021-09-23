@@ -30,7 +30,43 @@ Page({
             mark: '测试',
             color: '#2a97ff',
             bgColor: '#cce6ff'
-        }])
+        },
+        {
+            year: date.getFullYear(),
+            month: date.getMonth() + 1,
+            day: 10,
+            type: 'schedule',
+            mark: '测试1',
+            color: '#2a97ff',
+            bgColor: '#cce6ff'
+        },
+        {
+        year: date.getFullYear(),
+        month: date.getMonth() + 1,
+        day: 10,
+        type: 'schedule',
+        mark: '测试日程六个字',
+        color: '#2a97ff',
+        bgColor: '#cce6ff'
+    },
+    {
+        year: date.getFullYear(),
+        month: date.getMonth() + 1,
+        day: 10,
+        type: 'schedule',
+        mark: '测试3',
+        color: '#2a97ff',
+        bgColor: '#cce6ff'
+    },
+    {
+        year: date.getFullYear(),
+        month: date.getMonth() + 1,
+        day: 10,
+        type: 'schedule',
+        mark: '测试ri',
+        color: '#2a97ff',
+        bgColor: '#cce6ff'
+    }])
     },
     handleCalendarDateChange({ detail }) {
         // console.log('calendar-date-change', detail)

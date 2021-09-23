@@ -143,7 +143,7 @@ Component({
         initialize(current, callback) {
             const _today = Today()
             const system = wx.getSystemInfoSync()
-            const maxRate = this.judgeScreen(system) ? 0.8 : 0.9
+            const maxRate = this.judgeScreen(system) ? 0.9 : 0.95
             const _clientWidth = system.windowWidth
             const _otherHeight = Math.floor(200 * _clientWidth / 750)
             const calendarHeight = Math.floor(CalendarHeight * _clientWidth / 750)
@@ -515,10 +515,12 @@ Component({
         },
         initSelBar(i, d, l, w, v) {
             const r = this.data._rects[i % 7]
+            console.log('r',r);
+            let wid = r.width;
             return {
                 i,
                 x: r.center,
-                y: `calc(100% / ${ l } * ${ w + 0.5 })`,
+                y: `calc(100% / ${ l } * ${ w } +  ${ wid } * 0.6 * 1rpx )`,/*原始0.5     */ 
                 t: d.isToday,
                 d: d.day,
                 a: true,
