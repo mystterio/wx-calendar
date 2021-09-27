@@ -520,7 +520,7 @@ Component({
             return {
                 i,
                 x: r.center,
-                y: `calc(100% / ${ l } * ${ w } +  ${ wid } * 0.6 * 1rpx )`,/*原始0.5     */ 
+                y: `calc(100% / ${ l } * ${ w } +  ${ wid } * 0.6 * 1rpx + 17rpx)`,/*原始0.5     */ 
                 t: d.isToday,
                 d: d.day,
                 a: true,

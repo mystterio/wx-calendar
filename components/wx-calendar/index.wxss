@@ -232,7 +232,8 @@ text {
 
 .wd-calendar-week-row {
     width: 100%;
-    padding: 0 10rpx;
+    /* padding: 0 10rpx; */
+    padding:15rpx 10rpx 0rpx 10rpx;
 }
 
 .wd-calendar-week-row.l-4 {
@@ -252,6 +253,7 @@ text {
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
+    justify-content:flex-start;
     align-items: center;
     transition: opacity .28s ease 0s;
     overflow: hidden;
